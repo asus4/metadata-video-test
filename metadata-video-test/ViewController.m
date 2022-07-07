@@ -7,6 +7,13 @@
 
 #import "ViewController.h"
 
+
+
+extern void Avfi_LoadPlayer(const char* filePath);
+extern void Avfi_StartPlaying(void);
+extern void Avfi_StopPlaying(void);
+extern bool Avfi_IsPlaying(void);
+
 @interface ViewController ()
 
 @end
@@ -16,8 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"aaaaaa");
+    Avfi_LoadPlayer("aaaaaaa");
 }
 
+
+- (IBAction)onButtonTap:(id)sender {
+    if(Avfi_IsPlaying()) {
+        Avfi_StopPlaying();
+    } else {
+        Avfi_StartPlaying();
+    }
+}
 
 @end

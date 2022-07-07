@@ -17,6 +17,7 @@
 		7802AD532877406A00305B25 /* metadata_video_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD522877406A00305B25 /* metadata_video_testTests.m */; };
 		7802AD5D2877406A00305B25 /* metadata_video_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD5C2877406A00305B25 /* metadata_video_testUITests.m */; };
 		7802AD5F2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD5E2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m */; };
+		7802AD6C28774A6400305B25 /* AvfiMetaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD6B28774A6400305B25 /* AvfiMetaPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		7802AD582877406A00305B25 /* metadata-video-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "metadata-video-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7802AD5C2877406A00305B25 /* metadata_video_testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = metadata_video_testUITests.m; sourceTree = "<group>"; };
 		7802AD5E2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = metadata_video_testUITestsLaunchTests.m; sourceTree = "<group>"; };
+		7802AD6B28774A6400305B25 /* AvfiMetaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvfiMetaPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				7802AD442877406A00305B25 /* LaunchScreen.storyboard */,
 				7802AD472877406A00305B25 /* Info.plist */,
 				7802AD482877406A00305B25 /* main.m */,
+				7802AD6B28774A6400305B25 /* AvfiMetaPlayer.m */,
 			);
 			path = "metadata-video-test";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7802AD3E2877406900305B25 /* ViewController.m in Sources */,
+				7802AD6C28774A6400305B25 /* AvfiMetaPlayer.m in Sources */,
 				7802AD382877406900305B25 /* AppDelegate.m in Sources */,
 				7802AD492877406A00305B25 /* main.m in Sources */,
 				7802AD3B2877406900305B25 /* SceneDelegate.m in Sources */,
