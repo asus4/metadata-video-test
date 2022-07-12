@@ -18,6 +18,7 @@
 		7802AD5D2877406A00305B25 /* metadata_video_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD5C2877406A00305B25 /* metadata_video_testUITests.m */; };
 		7802AD5F2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD5E2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m */; };
 		7802AD6C28774A6400305B25 /* AvfiMetaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802AD6B28774A6400305B25 /* AvfiMetaPlayer.m */; };
+		787E9976287D6D0200AC27F7 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 787E9975287D6D0200AC27F7 /* sample.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		7802AD5C2877406A00305B25 /* metadata_video_testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = metadata_video_testUITests.m; sourceTree = "<group>"; };
 		7802AD5E2877406A00305B25 /* metadata_video_testUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = metadata_video_testUITestsLaunchTests.m; sourceTree = "<group>"; };
 		7802AD6B28774A6400305B25 /* AvfiMetaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvfiMetaPlayer.m; sourceTree = "<group>"; };
+		787E9975287D6D0200AC27F7 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sample.mp4; path = "metadata-video-test/sample.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		7802AD2A2877406900305B25 = {
 			isa = PBXGroup;
 			children = (
+				787E9975287D6D0200AC27F7 /* sample.mp4 */,
 				7802AD352877406900305B25 /* metadata-video-test */,
 				7802AD512877406A00305B25 /* metadata-video-testTests */,
 				7802AD5B2877406A00305B25 /* metadata-video-testUITests */,
@@ -245,6 +248,7 @@
 				7802AD462877406A00305B25 /* LaunchScreen.storyboard in Resources */,
 				7802AD432877406A00305B25 /* Assets.xcassets in Resources */,
 				7802AD412877406900305B25 /* Main.storyboard in Resources */,
+				787E9976287D6D0200AC27F7 /* sample.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
