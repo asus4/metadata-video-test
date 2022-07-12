@@ -8,7 +8,6 @@
 @implementation RawMetadata
 @end
 
-
 static AVAssetReader* _reader;
 static AVAssetReaderTrackOutput* _readerMetadataOutput;
 static AVAssetReaderOutputMetadataAdaptor* _metadataAdaptor;
@@ -16,13 +15,14 @@ static AVAssetReaderOutputMetadataAdaptor* _metadataAdaptor;
 static NSMutableArray<RawMetadata*>* _metadataBuffer = nil;
 #define kMETADATA_ID_RAW @"mdta/com.github.asus4.avfi.raw"
 
+extern void Avfi_UnloadMetadata(void);
 
-extern bool Avfi_LoadPlayer(const char* filePath) {
+extern bool Avfi_LoadMetadata(const char* filePath) {
+    Avfi_UnloadMetadata();
     // Load AVAsset from file path
     NSURL* url = [NSURL fileURLWithPath:[NSString stringWithUTF8String:filePath]];
     AVAsset* asset = [AVAsset assetWithURL:url];
 
-    NSLog(@"Avfi_LoadPlayer: url:%@, asset:%@", url, asset);
 
     // Ensure the asset has at leaset one metadata track.
     NSArray* tracks = [asset tracksWithMediaType:AVMediaTypeMetadata];
@@ -78,11 +78,28 @@ extern bool Avfi_LoadPlayer(const char* filePath) {
     }
 
     [_reader cancelReading];
+
+    NSLog(@"Avfi_LoadMetadata: %@", url);
     return true;
+}
+
+extern void Avfi_UnloadMetadata(void)
+{
+    _reader = nil;
+    _readerMetadataOutput = nil;
+    _metadataAdaptor = nil;
+    if(_metadataBuffer) {
+        [_metadataBuffer removeAllObjects];
+        _metadataBuffer = nil;
+    }
 }
 
 extern uint32_t Avfi_GetBufferSize(void)
 {
+    if(_metadataBuffer==nil) {
+        return 0;
+    }
+
     // Find max byte size of all metadata
     uint32_t maxSize = 0;
     for(RawMetadata* rawMetadata in _metadataBuffer) {
@@ -98,7 +115,7 @@ extern uint32_t Avfi_PeekMetadata(double time, void* data)
     }
 
     for(RawMetadata* rawMetadata in _metadataBuffer) {
-        if(CMTimeCompare(rawMetadata.time, CMTimeMakeWithSeconds(time, 240)) == 0) {
+        if(CMTIME_COMPARE_INLINE(rawMetadata.time, >=, CMTimeMakeWithSeconds(time, 240))) {
             uint32_t length = (uint32_t)rawMetadata.data.length;
             memcpy(data, rawMetadata.data.bytes, rawMetadata.data.length);
             return length;

@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-extern bool Avfi_LoadPlayer(const char* filePath);
+extern bool Avfi_LoadMetadata(const char* filePath);
 extern uint32_t Avfi_GetBufferSize(void);
 extern uint32_t Avfi_PeekMetadata(double time, void* data);
 
@@ -33,7 +33,7 @@ extern uint32_t Avfi_PeekMetadata(double time, void* data);
     _videoDuration = CMTimeGetSeconds(duration);
     NSLog(@"Video duration: %f", _videoDuration);
 
-    Avfi_LoadPlayer([filePath UTF8String]);
+    Avfi_LoadMetadata([filePath UTF8String]);
 
     uint32_t bufferSize = Avfi_GetBufferSize();
     NSLog(@"bufferSize: %i", bufferSize);
@@ -48,9 +48,8 @@ extern uint32_t Avfi_PeekMetadata(double time, void* data);
 }
 
 - (IBAction)onSliderChange:(UISlider *)sender {
-    NSLog(@"onSliderChange: %f", sender.value);
-
     double time = sender.value * _videoDuration;
+
     // Get metadata from the buffer
     Avfi_PeekMetadata(time, _metadataBuffer);
 
